@@ -130,8 +130,6 @@ void *boo_open_and_read_file(const char *path,
 		goto boo_clear_up_operation;
 	}
 
-	/// we haven't wrote this safeguard during our session
-	/// and it is problematic since it will be leacking memory
 	/// MUST CLOSE WHAT YOU OPENED.
 	if (target_file != NULL) {
 		fclose(target_file);
@@ -159,9 +157,8 @@ boo_operation_encrypt(char *target_buffer,  size_t target_buffer_size, char key)
 __boo_encryption_starter:
 	if (index >= target_buffer_size)
 		goto __boo_encryption_terminator;
-	// *(target_buffer + index) = *((target_buffer + index) + BOO_PADDER) ^ key;
 	char data = *(target_buffer + index);
-	data = (data ^ key) - BOO_PADDER;
+	data = (data ^ key) - BOO_PADDER; // The main code that is changed form MOO
 	*(target_buffer + index) = data;
 	index += 1;
 	goto __boo_encryption_starter;
