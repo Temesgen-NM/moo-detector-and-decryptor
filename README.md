@@ -28,7 +28,10 @@ For Windows users, the individual READMEs describe using **MSYS2** or **Cygwin**
 
 ---
 ## License
-All code in this repository is released into the public domain. See the full text in [`moo/UNLICENSE`](moo/UNLICENSE).
+All code in this repository is released into the public domain. See the full text in [UNLICENSE](UNLICENSE).
 
 ---
+## Author
+Temesgen Melaku
+
 *Happy exploring, hacking, and learning!* :cow: :lock:
